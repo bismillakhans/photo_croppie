@@ -22,7 +22,8 @@ from uploadApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', views.index),
+    path('upload_drag/', views.DragAndDropUploadView.as_view(),name='upload_drag'),
+
 ]
 
 if settings.DEBUG:
