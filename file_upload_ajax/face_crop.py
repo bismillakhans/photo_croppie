@@ -26,6 +26,8 @@ class FaceCropie(object):
 
 
 
+
+
 def myprint(img, tot_noi, photo_size=[3.5, 4.5], paper_size=[6, 4], orienatation='L'):
 
     # Photo sizes:
@@ -254,6 +256,8 @@ for (i, rect) in enumerate(rects):
 
     print_image = myprint(output, tot_noi, photo_size, paper_size, orienatation)
 
+def water(print_image):
+
     print_image = print_image[..., ::-1]
     wat_img = Image.fromarray(print_image, 'RGB')
     imOut = wat_img.convert("RGBA")
@@ -275,7 +279,11 @@ for (i, rect) in enumerate(rects):
     d.text((x, y), "Cash thanittu upayogikado", font=fnt, fill=(255, 255, 255, 128))
     txt = txt.rotate(30)
     final_img = Image.alpha_composite(imOut, txt)
-    final_img.show()
+    # final_img.show()
+    return final_img
+
+final_img=water(print_image)
+final_img.show()
 
 # 	faceAligned = fa.align(image, gray, rect)
 # 	cv2.imshow("Aligned", faceAligned)
