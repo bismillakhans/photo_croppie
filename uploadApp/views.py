@@ -16,7 +16,7 @@ from uploadApp.models import Photo
 class DragAndDropUploadView(View):
     def get(self, request):
         photos_list = Photo.objects.all()
-        return render(self.request, 'uploadApp/base.html', {'photos': photos_list})
+        return render(self.request, 'uploadApp/upload.html', {'photos': photos_list})
 
     def post(self, request):
         time.sleep(1)

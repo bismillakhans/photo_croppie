@@ -21,7 +21,9 @@
     <link rel="apple-touch-icon" href="#"/>
 
     <!-- Bootstrap CSS -->
+    {% block css_block %}
     <link rel="stylesheet" href='{% static "web/css/bootstrap.min.css" %}'>
+    {% endblock %}
     <!-- Pogo Slider CSS -->
     <link rel="stylesheet" href='{% static "web/css/pogo-slider.min.css" %}'>
     <!-- Site CSS -->
@@ -53,7 +55,10 @@
 <header class="top-header">
     <nav class="navbar header-nav navbar-expand-lg">
         <div class="container-fluid">
-            <h2>Look Perfect</h2>
+            <a href="/">
+
+                <h2>Look Perfect</h2>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
                     aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
@@ -62,7 +67,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link active" href="index.html">Home</a></li>
+                    <li><a class="nav-link active" href="/">Home</a></li>
                     <li><a class="nav-link" href="about.html">Aboutus</a></li>
                     <li><a class="nav-link" href="contact.html">Contact Us</a></li>
                     <li><a class="nav-link active" style="background:#fff;color:#000;" href="contact.html">Buy now</a>
@@ -163,10 +168,11 @@
 
 <!-- ALL JS FILES -->
 {% block java_script %}
-{% endblock %}
 <script src='{%   static "web/js/jquery.min.js" %}'></script>
-<script src='{%  static "web/js/popper.min.js" %}'></script>
 <script src='{%  static "web/js/bootstrap.min.js" %}'></script>
+{% endblock %}
+
+<script src='{%  static "web/js/popper.min.js" %}'></script>
 <!-- ALL PLUGINS -->
 <script src='{% static "web/js/jquery.magnific-popup.min.js" %}'></script>
 <script src='{% static "web/js/jquery.pogo-slider.min.js" %}'></script>
