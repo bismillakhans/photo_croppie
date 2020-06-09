@@ -1,68 +1,182 @@
-{% load static %}<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
+<!-- Basic -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Photos Library - Simple is Better Than Complex{% endblock %}</title>
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>Look Perfect</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="#"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href='{% static "web/css/bootstrap.min.css" %}'>
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href='{% static "web/css/pogo-slider.min.css" %}'>
+    <!-- Site CSS -->
+    <link rel="stylesheet" href='{% static "web/css/style.css" %}'>
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href='{% static "web/css/responsive.css" %}'>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href='{% static "web/css/custom.css" %}'>
+
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-        .page-header {
-            margin-top: 0;
-        }
-    </style>
+
 </head>
-<body>
 
-<div class="container">
-    <div  class="well text-muted text-center js-upload-photos" style="padding-top: 4rem; padding-bottom: 4rem;">
-        <span class="glyphicon glyphicon-arrow-down" style="font-size: 4rem;"></span>
-        <h3>Drop Photos Here to Upload</h3>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+<!-- LOADER -->
+<div id="preloader">
+    <div class="loader">
+
     </div>
+</div>
+<!-- end loader -->
+<!-- END LOADER -->
 
-    <input id="fileupload" type="file" name="file" multiple
-           style="display: none;"
-           data-url="{% url 'upload_drag' %}"
-           data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+<!-- Start header -->
+<header class="top-header">
+    <nav class="navbar header-nav navbar-expand-lg">
+        <div class="container-fluid">
+            <h2>Look Perfect</h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
+                    aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link active" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="about.html">Aboutus</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li><a class="nav-link active" style="background:#fff;color:#000;" href="contact.html">Buy now</a>
+                    </li>
+                </ul>
+            </div>
 
-    <table id="gallery" class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Photo</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for photo in photos %}
-            <tr>
-                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Uploading...</h4>
+        </div>
+    </nav>
+</header>
+<!-- End header -->
+
+{% block main_block %}
+
+{% endblock %}
+
+<!-- Start Footer -->
+<footer class="footer-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="logo">
+                    <a href="index.html"><img src="images/footer_logo.png" alt="#"/></a>
                 </div>
-                <div class="modal-body">
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+            </div>
+            <div class="col-lg-12 white_fonts">
+                <h4 class="text-align">Contact Us</h4>
+            </div>
+            <div class="margin-top_30 col-md-8 offset-md-2 white_fonts">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="full icon text_align_center">
+                            <img src="images/social1.png">
+                        </div>
+                        <div class="full white_fonts text_align_center">
+                            <p>London 145
+                                <br>United Kingdom</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="full icon text_align_center">
+                            <img src="images/social2.png">
+                        </div>
+                        <div class="full white_fonts text_align_center">
+                            <p>consultation@gmail.com
+                                <br>consultation@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="full icon text_align_center">
+                            <img src="images/social3.png">
+                        </div>
+                        <div class="full white_fonts text_align_center">
+                            <p>+7586656566
+                                <br>+7586656566</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row white_fonts margin-top_30">
+            <div class="col-lg-12">
+                <div class="full">
+                    <div class="center">
+                        <ul class="social_icon">
+                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</footer>
+<!-- End Footer -->
+
+<div class="footer_bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="crp">© 2019 RD resume . All Rights Reserved.</p>
+                <ul class="bottom_menu">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find jobs</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
-<script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
-<script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
-<script src="{% static 'js/progress-bar-upload.js' %}"></script>
+
+<a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+{% block java_script %}
+{% endblock %}
+<script src='{%   static "web/js/jquery.min.js" %}'></script>
+<script src='{%  static "web/js/popper.min.js" %}'></script>
+<script src='{%  static "web/js/bootstrap.min.js" %}'></script>
+<!-- ALL PLUGINS -->
+<script src='{% static "web/js/jquery.magnific-popup.min.js" %}'></script>
+<script src='{% static "web/js/jquery.pogo-slider.min.js" %}'></script>
+<script src='{% static "web/js/slider-index.js" %}'></script>
+<script src='{% static "web/js/smoothscroll.js" %}'></script>
+<script src='{%  static "web/js/form-validator.min.js" %}'></script>
+<script src='{% static "web/js/contact-form-script.js" %}'></script>
+<script src='{% static "web/js/isotope.min.js" %}'></script>
+<script src='{% static "web/js/images-loded.min.js" %}'></script>
+<script src='{% static "web/js/custom.js" %}'></script>
 </body>
+
 </html>

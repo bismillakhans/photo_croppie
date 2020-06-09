@@ -28,4 +28,7 @@ class DragAndDropUploadView(View):
             data = {'is_valid': False}
         return JsonResponse(data)
 
+def index(request):
+    return render(request,"uploadApp/index.html")
+
 
