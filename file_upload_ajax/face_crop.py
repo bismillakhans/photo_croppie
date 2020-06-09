@@ -9,6 +9,13 @@ from PIL import Image, ImageDraw, ImageFont
 # out.show()
 
 
+class FaceCropie(object):
+    def __init__(self,image):
+        self.__image=image
+        self.tot_noi = 10  # no of images
+        self.photo_size = [3.5, 4.5]  # in cm default 3.5x4.5 cm
+        self.paper_size = [6, 4]  # in inches default 6x4 inches
+        self.orienatation = 'L'  # Potrait and landscape, default =landscape
 
 
 
@@ -17,23 +24,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 
-
-
-
-
-
-
-
-
-tot_noi = 10  # no of images
-photo_size = [3.5, 4.5]  # in cm default 3.5x4.5 cm
-paper_size = [6, 4]  # in inches default 6x4 inches
-orienatation = 'L'  # Potrait and landscape, default =landscape
 
 
 def myprint(img, tot_noi, photo_size=[3.5, 4.5], paper_size=[6, 4], orienatation='L'):
-    import numpy as np
-    import cv2
+
     # Photo sizes:
     # 2.5 x 3.2 cm,
     # 2.5 x 3.5 cm.
@@ -258,7 +252,7 @@ for (i, rect) in enumerate(rects):
     (w, h) = (desiredFaceWidth, desiredFaceHeight)
     output = cv2.warpAffine(image, M, (w, h), flags=cv2.INTER_CUBIC)
 
-    print_image = myprint.myprint(output, tot_noi, photo_size, paper_size, orienatation)
+    print_image = myprint(output, tot_noi, photo_size, paper_size, orienatation)
 
     print_image = print_image[..., ::-1]
     wat_img = Image.fromarray(print_image, 'RGB')
