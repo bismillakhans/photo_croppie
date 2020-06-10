@@ -4,14 +4,18 @@ import numpy as np
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-# out = Image.alpha_composite(base, txt)
-# out.show()
-
-
-tot_noi = 10  # no of images
-photo_size = [3.5, 4.5]  # in cm default 3.5x4.5 cm
-paper_size = [6, 4]  # in inches default 6x4 inches
-orienatation = 'L'  # Potrait and landscape, default =landscape
+class ImageEdit:
+    tot_noi = 10  # no of images
+    photo_size = [3.5, 4.5]  # in cm default 3.5x4.5 cm
+    paper_size = [6, 4]  # in inches default 6x4 inches
+    orienatation = 'L'  # Potrait and landscape, default =landscape
+    def __init__(self, path):
+        self.path = path
+        self.font = None
+        try:
+            self.output = Image.open(path)
+        except:
+            raise ValueError('Unable to open specified image path')
 
 
 def myprint(img, tot_noi, photo_size=[3.5, 4.5], paper_size=[6, 4], orienatation='L'):

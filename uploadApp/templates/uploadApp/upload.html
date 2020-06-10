@@ -27,11 +27,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {% for photo in photos %}
+
                             <tr>
-                                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
+                                <td><a href="{{ photo.file.url }}"><img src="{{ image_string }}" width="100" height="100" >{{ photo.file.name }}</a></td>
                             </tr>
-                            {% endfor %}
+
                             </tbody>
                         </table>
                         <div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
