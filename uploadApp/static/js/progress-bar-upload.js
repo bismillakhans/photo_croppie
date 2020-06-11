@@ -26,7 +26,8 @@ $(function () {
     done: function (e, data) {
       if (data.result.is_valid) {
         $("#gallery tbody").prepend(
-          "<tr><td><a href='" + data.result.url + "'>" + data.result.name + "</a></td></tr>"
+          "<tr><td><img src=" + data.result.url + " height='100' width='100'></td><td>" +
+            "<a href='#' ><img src="+data.result.image_string+" width='100' height='100'></a></td></tr>"
         )
       }
     }

@@ -23,14 +23,17 @@
                         <table id="gallery" class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>Photo</th>
+                                <th>Orginal</th>
+                                <th>Processed</th>
                             </tr>
                             </thead>
                             <tbody>
-
+                                {% for photo in photos %}
                             <tr>
-                                <td><a href="{{ photo.file.url }}"><img src="{{ image_string }}" width="100" height="100" >{{ photo.file.name }}</a></td>
+                                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
+                                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
                             </tr>
+                                {% endfor %}
 
                             </tbody>
                         </table>
