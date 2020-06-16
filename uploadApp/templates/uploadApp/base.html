@@ -71,7 +71,7 @@
                 <ul class="navbar-nav">
                     <li><a class="nav-link active" href="/">Home</a></li>
                     <li><a class="nav-link" href="about.html">Aboutus</a></li>
-                    <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li><a class="nav-link" href="#footer-box">Contact Us</a></li>
                     <li><a class="nav-link active" style="background:#fff;color:#000;" href="contact.html">Buy now</a>
                     </li>
                 </ul>
@@ -87,6 +87,7 @@
 {% endblock %}
 
 <!-- Start Footer -->
+ <section id="footer-box">
 <footer class="footer-box">
     <div class="container">
         <div class="row">
@@ -102,7 +103,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="full icon text_align_center">
-                            <img src="images/social1.png">
+                            <img src='{% static "web/images/social1.png" %}'>
                         </div>
                         <div class="full white_fonts text_align_center">
                             <p>London 145
@@ -111,20 +112,20 @@
                     </div>
                     <div class="col-md-4">
                         <div class="full icon text_align_center">
-                            <img src="images/social2.png">
+                            <img src='{% static "web/images/social2.png" %}'>
                         </div>
                         <div class="full white_fonts text_align_center">
-                            <p>consultation@gmail.com
-                                <br>consultation@gmail.com</p>
+                            <p>contact@auggen21.in
+                                <br>auggen21research@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="full icon text_align_center">
-                            <img src="images/social3.png">
+                            <img src='{% static "web/images/social3.png" %}'>
                         </div>
                         <div class="full white_fonts text_align_center">
-                            <p>+7586656566
-                                <br>+7586656566</p>
+                            <p>+91 85900 55535
+                                <br>+91 8089804597 </p>
                         </div>
                     </div>
                 </div>
@@ -147,6 +148,7 @@
         </div>
     </div>
 </footer>
+ </section>
 <!-- End Footer -->
 
 <div class="footer_bottom">

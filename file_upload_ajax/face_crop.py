@@ -196,7 +196,7 @@ def crop_image(path):
         txt = Image.new('RGBA', wat_img.size, (255, 255, 255, 0))
 
         # get a font
-        fnt = ImageFont.truetype('arial.ttf', 40)
+        fnt = ImageFont.load_default()
         # get a drawing context
         d = ImageDraw.Draw(txt)
         width, height = wat_img.size
